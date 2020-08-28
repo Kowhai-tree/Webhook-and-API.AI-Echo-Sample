@@ -37,7 +37,7 @@ restService.post("/echo", function(req, res) {
   };
   
   return res.json({
-    payload: speechResponse + "Repeated"
+    payload: speechResponse,
     //data: speechResponse,
     fulfillmentText: speech,
     speech: speech,
