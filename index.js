@@ -37,11 +37,11 @@ restService.post("/echo", function(req, res) {
   };
   
   return res.json({
-    payload: speechResponse,
+    payload: speechResponse + "Repeated"
     //data: speechResponse,
     fulfillmentText: speech,
     speech: speech,
-    displayText: speech + "Repeated",
+    displayText: (speech + "Repeated"),
     source: "webhook-echo-sample"
   });
 });
