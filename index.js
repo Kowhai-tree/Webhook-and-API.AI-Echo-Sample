@@ -21,8 +21,17 @@ restService.post("/echo", function(req, res) {
       ? req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";
   
-  speech = speech + "Repeated"
-  
+  var speechResponse
+  var datemonth = new Date();
+var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var dateday = new Date();
+var day = new Date();
+var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+  if speech.indexOf("date") = true 
+  then { speechResponse = document.getElementById("demo").innerHTML = months[datemonth.getMonth()] + document.getElementById("demo").innerHTML = days[day.getDay()] +
+  document.getElementById("demo").innerHTML = dateday.getDate()
+  else
   var speechResponse = {
     google: {
       expectUserResponse: true,
@@ -47,7 +56,7 @@ restService.post("/echo", function(req, res) {
     source: "webhook-echo-sample"
   });
 });
-
+}
 restService.post("/audio", function(req, res) {
   var speech = "";
   switch (req.body.result.parameters.AudioSample.toLowerCase()) {
