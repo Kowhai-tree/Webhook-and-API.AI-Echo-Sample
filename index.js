@@ -41,7 +41,7 @@ restService.post("/echo", function(req, res) {
     //data: speechResponse,
     fulfillmentText: speech,
     speech: speech,
-    displayText: speech,
+    displayText: speech + "Repeated",
     source: "webhook-echo-sample"
   });
 });
