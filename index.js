@@ -21,6 +21,8 @@ restService.post("/echo", function(req, res) {
       ? req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";
   
+  speech += speech + "Repeated"
+  
   var speechResponse = {
     google: {
       expectUserResponse: true,
@@ -41,7 +43,7 @@ restService.post("/echo", function(req, res) {
     //data: speechResponse,
     fulfillmentText: speech,
     speech: speech,
-    displayText: (speech + "Repeated"),
+    displayText: speech,
     source: "webhook-echo-sample"
   });
 });
