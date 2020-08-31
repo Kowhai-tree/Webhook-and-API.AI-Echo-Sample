@@ -28,9 +28,9 @@ var dateday = new Date();
 var day = new Date();
 var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-  if speech.indexOf("date") = true 
-  then { speechResponse = document.getElementById("demo").innerHTML = months[datemonth.getMonth()] + document.getElementById("demo").innerHTML = days[day.getDay()] +
-  document.getElementById("demo").innerHTML = dateday.getDate()
+  if speech.indexOf("date") != -1
+  then { speechResponse = { document.getElementById("demo").innerHTML = months[datemonth.getMonth()] + document.getElementById("demo").innerHTML = days[day.getDay()] +
+  document.getElementById("demo").innerHTML = dateday.getDate() }
         return res.json({
     payload: speechResponse,
     //data: speechResponse,
@@ -40,7 +40,8 @@ var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "S
     source: "webhook-echo-sample"
   });
   else
-  var speechResponse = {
+
+  speechResponse = {
     google: {
       expectUserResponse: true,
       richResponse: {
@@ -53,6 +54,7 @@ var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "S
         ]
       }
     }
+  }
   };
   
   return res.json({
@@ -64,7 +66,7 @@ var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "S
     source: "webhook-echo-sample"
   });
 });
-};
+ 
 restService.post("/audio", function(req, res) {
   var speech = "";
   switch (req.body.result.parameters.AudioSample.toLowerCase()) {
