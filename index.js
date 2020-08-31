@@ -64,7 +64,7 @@ var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "S
     source: "webhook-echo-sample"
   });
 });
-}
+};
 restService.post("/audio", function(req, res) {
   var speech = "";
   switch (req.body.result.parameters.AudioSample.toLowerCase()) {
