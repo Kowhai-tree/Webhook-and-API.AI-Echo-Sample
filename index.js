@@ -31,6 +31,14 @@ var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "S
   if speech.indexOf("date") = true 
   then { speechResponse = document.getElementById("demo").innerHTML = months[datemonth.getMonth()] + document.getElementById("demo").innerHTML = days[day.getDay()] +
   document.getElementById("demo").innerHTML = dateday.getDate()
+        return res.json({
+    payload: speechResponse,
+    //data: speechResponse,
+    fulfillmentText: speech,
+    speech: speech,
+    displayText: speech,
+    source: "webhook-echo-sample"
+  });
   else
   var speechResponse = {
     google: {
